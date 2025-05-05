@@ -1,5 +1,12 @@
 import java.util.*;
-
+/**
+* Removes duplicated words from a given sentence.
+* Keeps the first occurrence of each word and maintains the original word order.
+*
+* @param sentence the input sentence from which duplicated words are to be removed
+* @return a new sentence with duplicated words removed;
+* returns the original sentence if it is null or empty
+*/
 public class SentenceProcessor {
 
     public String removeDuplicatedWords(String sentence) {
@@ -19,7 +26,15 @@ public class SentenceProcessor {
 
         return result.toString();
     }
-
+/**
+* Replaces all exact matches of a target word with a replacement word in the given sentence.
+*
+* @param target the word to be replaced
+* @param replacement the word to replace the target word
+* @param sentence the input sentence in which the replacement should occur
+* @return a new sentence with the target word replaced;
+* returns the original sentence if it is null or empty
+*/
     public String replaceWord(String target, String replacement, String sentence) {
         if (sentence == null || sentence.isEmpty()) return sentence;
 
