@@ -1,12 +1,10 @@
 /**
  * Represents a circle shape.
- * Uses diameter as the input length.
+ * The length represents the diameter of the circle.
  */
 public class Circle extends Shape {
-
     /**
-     * Constructs a Circle with the specified diameter.
-     * 
+     * Constructs a Circle with the given diameter.
      * @param length the diameter of the circle
      */
     public Circle(double length) {
@@ -15,7 +13,6 @@ public class Circle extends Shape {
 
     /**
      * Sets the diameter of the circle.
-     * 
      * @param length the new diameter
      */
     @Override
@@ -24,23 +21,27 @@ public class Circle extends Shape {
     }
 
     /**
-     * Calculates the area of the circle.
-     * 
-     * @return the area
+     * Calculates and returns the area of the circle.
+     * Uses the formula: π * (r²) where r = diameter / 2
+     * @return the area of the circle rounded to two decimal places,
+     *         or 0.0 if diameter is 0
      */
     @Override
     public double getArea() {
-        double radius = length / 2;
-        return Math.PI * radius * radius;
+        if (length == 0) return 0.0;
+        double r = length / 2;
+        return Math.round((Math.PI * r * r) * 100.0) / 100.0;
     }
 
     /**
-     * Calculates the perimeter (circumference) of the circle.
-     * 
-     * @return the perimeter
+     * Calculates and returns the perimeter (circumference) of the circle.
+     * Uses the formula: π * diameter
+     * @return the perimeter of the circle rounded to two decimal places,
+     *         or 0.0 if diameter is 0
      */
     @Override
     public double getPerimeter() {
-        return Math.PI * length;
+        if (length == 0) return 0.0;
+        return Math.round((Math.PI * length) * 100.0) / 100.0;
     }
 }
