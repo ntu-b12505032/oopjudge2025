@@ -1,18 +1,22 @@
 /**
- * A factory class to create Shape instances based on a given type.
+ * Factory class for creating different types of Shape instances.
  */
 public class ShapeFactory {
-
+    /**
+     * Enum representing the types of shapes that can be created.
+     */
     public enum Type {
-        Triangle, Square, Circle
+        Triangle,
+        Square,
+        Circle
     }
 
     /**
      * Creates a Shape instance based on the specified type and length.
-     * 
-     * @param shapeType the type of shape to create
-     * @param length the length to use for the shape
-     * @return a Shape object (Triangle, Square, or Circle)
+     *
+     * @param shapeType the type of shape to create (Triangle, Square, or Circle)
+     * @param length    the side length or diameter of the shape
+     * @return a Shape object of the specified type with the given length
      */
     public Shape createShape(Type shapeType, double length) {
         switch (shapeType) {
@@ -23,7 +27,7 @@ public class ShapeFactory {
             case Circle:
                 return new Circle(length);
             default:
-                throw new IllegalArgumentException("Unsupported shape type");
+                return null;
         }
     }
 }
