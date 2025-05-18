@@ -1,12 +1,10 @@
 /**
- * Represents an equilateral triangle.
- * Extends the abstract Shape class and implements area and perimeter calculation.
+ * Represents an equilateral triangle shape.
+ * The length represents the side length of the triangle.
  */
 public class Triangle extends Shape {
-
     /**
-     * Constructs a Triangle with the specified side length.
-     * 
+     * Constructs a Triangle with the given side length.
      * @param length the side length of the triangle
      */
     public Triangle(double length) {
@@ -15,7 +13,6 @@ public class Triangle extends Shape {
 
     /**
      * Sets the side length of the triangle.
-     * 
      * @param length the new side length
      */
     @Override
@@ -24,22 +21,22 @@ public class Triangle extends Shape {
     }
 
     /**
-     * Calculates the area of the equilateral triangle.
-     * 
-     * @return the area
+     * Calculates and returns the area of the triangle.
+     * Uses the formula: (√3 / 4) * side²
+     * @return the area of the triangle rounded to two decimal places
      */
     @Override
     public double getArea() {
-        return (Math.sqrt(3) / 4) * length * length;
+        return Math.round((Math.sqrt(3) / 4 * length * length) * 100.0) / 100.0;
     }
 
     /**
-     * Calculates the perimeter of the triangle.
-     * 
-     * @return the perimeter
+     * Calculates and returns the perimeter of the triangle.
+     * Uses the formula: 3 * side
+     * @return the perimeter of the triangle rounded to two decimal places
      */
     @Override
     public double getPerimeter() {
-        return 3 * length;
+        return Math.round((3 * length) * 100.0) / 100.0;
     }
 }
