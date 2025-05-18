@@ -1,5 +1,14 @@
+/**
+ * Represents a circle shape using diameter as length.
+ * Provides implementation for area and perimeter calculation.
+ */
 public class Circle extends Shape {
 
+    /**
+     * Constructs a Circle with given diameter.
+     * 
+     * @param length the diameter of the circle
+     */
     public Circle(double length) {
         super(length);
     }
