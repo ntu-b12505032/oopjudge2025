@@ -1,22 +1,18 @@
 /**
  * Represents a square shape.
- * Extends the abstract Shape class and implements area and perimeter calculation.
+ * The length represents the side length of the square.
  */
 public class Square extends Shape {
-
     /**
-     * Constructs a Square with the specified side length.
-     * 
+     * Constructs a Square with the given side length.
      * @param length the side length of the square
      */
-    
     public Square(double length) {
         super(length);
     }
 
     /**
      * Sets the side length of the square.
-     * 
      * @param length the new side length
      */
     @Override
@@ -25,22 +21,22 @@ public class Square extends Shape {
     }
 
     /**
-     * Calculates the area of the square.
-     * 
-     * @return the area
+     * Calculates and returns the area of the square.
+     * Uses the formula: side²
+     * @return the area of the square rounded to two decimal places
      */
     @Override
     public double getArea() {
-        return length * length;
+        return Math.round((length * length) * 100.0) / 100.0;
     }
 
     /**
-     * Calculates the perimeter of the square.
-     * 
-     * @return the perimeter
+     * Calculates and returns the perimeter of the square.
+     * Uses the formula: 4 * side
+     * @return the perimeter of the square rounded to two decimal places
      */
     @Override
     public double getPerimeter() {
-        return 4 * length;
+        return Math.round((4 * length) * 100.0) / 100.0;
     }
 }
